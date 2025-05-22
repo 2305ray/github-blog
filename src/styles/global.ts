@@ -13,9 +13,13 @@ export const GlobalStyled = createGlobalStyle`
  }
 
  body {
-    background-color: ${props => props.theme.blue400};
+    background-color: ${props => props.theme.blue600};
     color: ${props => props.theme.gray200};
     -webkit-font-smoothing: antialiased;
+    
+    h1{
+      color: ${props => props.theme.white};
+    }
  }
 
  body, input, textarea, button {

@@ -5,7 +5,7 @@ export const HeaderContent = styled.div`
   width: 100vw;
   height: 18.5rem;
   overflow: hidden;
-  background: ${props => props.theme.blue400};
+  background: ${props => props.theme.blue300};
   
   img.cover {
     position: absolute;
