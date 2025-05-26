@@ -1,7 +1,16 @@
 import styled from "styled-components";
+
 export const PublicationsContainer = styled.main`
-    width: 100%;
-    max-width: 1120px; // se a tela for menor ela vai ter 100% da tela
-    margin: 4rem auto 0;
+   width: 56rem; 
+    margin: 0 auto; 
     padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: ;
+`;
+
+export const PublicationsContent = styled.main`
+    display:grid;
+    width: 26rem; 
+    margin: 0 auto; 
+    padding: 1rem;
 `;

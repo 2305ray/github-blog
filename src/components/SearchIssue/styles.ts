@@ -4,9 +4,8 @@ export const SearchContainer = styled.section`
     display: flex;
     flex-direction: column; 
     gap: 1rem;
-    
     width: 56rem; 
-    margin: 0 auto; 
+   margin-left: -1rem;
 
     input {
         background: ${props => props.theme.blue700};

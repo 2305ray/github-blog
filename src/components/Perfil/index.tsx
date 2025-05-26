@@ -1,51 +1,48 @@
-import {
-    ArrowSquareOut,
-  Buildings,
-  GithubLogo,
-  Users,
-} from "phosphor-react";
+import { ArrowSquareOut, Buildings, GithubLogo, Users } from "phosphor-react";
 import {
   PerfilContainer,
   PerfilContent,
   HeaderLink,
   FooterInformation,
-  
 } from "./styles";
 
+import { useUser } from "../../hooks/useUser";
+import { useEffect } from "react";
+
 export function Perfil() {
+  const { user, fetchUser } = useUser();
+  useEffect(() => {
+    fetchUser("2305ray");
+  }, [fetchUser]);
+
   return (
     <PerfilContainer>
-      <img
-        src="https://avatars.githubusercontent.com/u/167773794?s=400&u=64b2a8e6f3120354e3a6cdf3c2687bf827663298&v=4"
-        alt=""
-      />
+      <img src={user?.avatar_url} alt={user?.login} />
+
       <PerfilContent>
         <HeaderLink>
-          <h1>Cameron Williamson</h1>
+          <h1>{user?.name}</h1>
           <a
-            href="https://github.com/2305ray"
+            href={user?.html_url}
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub <ArrowSquareOut/>
+            GitHub <ArrowSquareOut />
           </a>
         </HeaderLink>
-          <p>
-            Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-            viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-            volutpat pulvinar vel mass.
-          </p>
+        <p>{user?.bio}</p>
         <FooterInformation>
           <p>
-            <GithubLogo weight="fill"/> Camronwll
+            <GithubLogo weight="fill" /> {user?.login}
           </p>
 
           <p>
-            <Buildings weight="fill"/> RocketSeat
+            <Buildings weight="fill" /> {user?.company}
           </p>
 
           <p>
-            <Users weight="fill"/> 32 Seguidores
+            <Users weight="fill" />
+            {user?.followers} Seguidores
           </p>
         </FooterInformation>
       </PerfilContent>

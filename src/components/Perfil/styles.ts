@@ -7,6 +7,7 @@ export const PerfilContainer = styled.section`
     height: 14rem;
     margin: 0 auto;
     margin-top: -5rem;
+    margin-bottom: 2rem;
     padding: 0 1.5rem;
     display: flex;
     align-items: center;

@@ -1,13 +1,16 @@
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/theme/default";
 import { GlobalStyled } from "./styles/global";
-import { Publications } from "./pages/Publications";
+import { UserProvider } from "./contexts/userApi";
+import { AppRoutes } from "./Routes";
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyled />
-      <Publications />
+      <UserProvider>
+        <AppRoutes />
+      </UserProvider>
     </ThemeProvider>
   );
 }
